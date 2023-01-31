@@ -3,10 +3,10 @@ from django.http import HttpResponse
 
 
 def projects(request):
-    return HttpResponse('here our projects')
+    return render(request, 'projects/html/projects.html')
 
 
 def project(request, pk):
-    return HttpResponse('here our projects' + ' ' + pk)
+    return render(request, 'projects/html/single-project.html')
 
 # Create your views here.
