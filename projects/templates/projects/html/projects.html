@@ -2,6 +2,22 @@
 
 {% block content %}
 
-<h1>Projects template</h1>
+    <p>Hello you are on the {{ page }} page</p>
 
+    {% if number > 10 %}
+        <p>Number is greater than 10</p>
+        {% elif number == 10 %}
+            <p>Number is equal 10</p>
+        {% else %}
+            <p>Number is less than 10</p>
+    {% endif %}
+
+    <hr>
+    <h1>Projects</h1>
+
+    <ul>
+        {% for project in projects%}
+            <li>Name: <a href="/project/{{ project.id }}">{{ project.title }}</a></li>
+        {% endfor %}
+    </ul>
 {% endblock content %}
