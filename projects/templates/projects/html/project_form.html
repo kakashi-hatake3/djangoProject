@@ -3,12 +3,9 @@
 {% block content %}
 
 <h1>Project Form</h1>
-    <form method="post">
+    <form action="" method="post">
     {% csrf_token %}
-        {% for el in form %}
-            {{ el.label }}
-            {{ el }}
-        {% endfor %}
+        {{ form.as_p }}
     <input type="submit">
     </form>
 
