@@ -1,0 +1,15 @@
+{% extends 'html/main.html' %}
+
+{% block content %}
+
+<h1>Project Form</h1>
+    <form method="post">
+    {% csrf_token %}
+        {% for el in form %}
+            {{ el.label }}
+            {{ el }}
+        {% endfor %}
+    <input type="submit">
+    </form>
+
+{% endblock %}
